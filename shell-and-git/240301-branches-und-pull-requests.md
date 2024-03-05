@@ -32,9 +32,10 @@ git push origin main |
 
 - merge branch into main (remotely) | per button dort
 - delete branch (remotely) | per button dort
-- delete branch (locally) | git branch -d branchname
 - zu main wechseln (locally) | git switch main
-- neues main pullen | git pull | git pull origin main
+- neues main pullen | git pull | git pull origin main | git pull sollte auch reichen, da man sich ja in main befindet
+- delete branch (locally) | git branch -d branchname
 
 [Cheatsheet von Merle](https://neuefische-students.slack.com/archives/C06KW9DAUF5/p1709308803934359)<br>
-[Hand-out](sessions/git-branches-and-prs/git-branches-and-prs.md)
+[Hand-out](sessions/git-branches-and-prs/git-branches-and-prs.md)<br>
+[Git_Befehle](https://git-scm.com/docs/)

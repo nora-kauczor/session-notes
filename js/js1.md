@@ -97,6 +97,8 @@ addEventlistener wird auf addcolorbutton angewendet, da über button das event a
 ```js
 const removeColorButton ...
 addColorButton.addEventListener("click", () => {mainElement.classList.add("dark")})
+
+name-der-variablen.methode("event auf das reagiert werden soll", () => {was-geändert-werden-soll.classList.add-oder-remove("name-der-class")})
 ```
 
 <br>
@@ -114,5 +116,7 @@ wenn button keinen eindeutigen text hat, dann sollte man aria-label hinzufügen
 
 queryselector sucht immer nur erstes element aus, dass dieser ... entspricht
 nur das erste, das dieses data-js attribut hat
+
+https://github.com/neuefische/hh-web-24-2/blob/main/sessions/js-basics/js-basics.md
 
 https://onedrive.live.com/redir?resid=A7AC670D5F7BAB28%2161188&page=Edit&wd=target%28Neuer%20Abschnitt%201.one%7Cd9ef04ba-36bf-41b5-8b16-4bea5efacd7a%2FVariables%2C%20Data%20Types%7C2bc7ffcb-4da7-4b51-9b66-e714433059e1%2F%29&wdorigin=NavigationUrl

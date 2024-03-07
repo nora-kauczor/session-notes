@@ -17,3 +17,11 @@
 - man fängt bei mobile an (design für smartphone). ist zwar herausfordernder am smartphone alles auf der kleinen fläche darzustellen, dafür danach einfacher auf der größeren fläche. außerdem viel genutzt.
 - jeweils immer in der css-datei in der auch die betroffenen classes sind. auch wenn dann quais gleicher media query in mehreren dateien ist.
 - wie kommt man auf die pixel-werte? wo sind die break points zwischen größe von smartphone - tablet - .. -> es gibt keine richtigen standards, man muss es selber ausprobieren, weil es so viele unterschiedliche display-größen gibt
+- ich kann in media query auch für einen bestimmten bereich die farben aus root umdefinieren
+- auch andere kriterien als viewport sizes, media queries können auch orientation, color-scheme, ...[(list)](https://developer.mozilla.org/en-US/docs/Web/CSS/@media#media_features)
+- The viewport meta tag#
+  Very important: for media queries to work, it's necessary to set a specific <meta> tag in the <head> section of the page with viewport as name and width=device-width, initial-scale=1. as content.
+
+https://web-active-learning.vercel.app/documents/css-responsive
+
+https://github.com/neuefische/hh-web-24-2/blob/main/sessions/css-responsive/css-responsive.md

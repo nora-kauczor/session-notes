@@ -1,4 +1,6 @@
-# 08.03.24 pm
+08.03.24 pm
+
+# functions 2
 
 `console.log(...)` oder `return ...`;
 <br>

@@ -2,6 +2,8 @@
 
 # JS Array Methods 2
 
+https://github.com/neuefische-web-demos/hh-web-24-2-js-array-methods-2
+
 ## Learning Objectives
 
 - [ ] Understanding advanced array methods
@@ -27,6 +29,19 @@ colors.includes("nemo"); // false
 ```
 
 ### notes
+
+- begin to search from a certain point in array (wenn array sehr lang ist und der code nicht so lange laufen soll und man will weiter hinten suchen)
+  `array.includes(value, index-to-start-at)`
+
+numberOutput wurde vorher im script schon mit queryselector geholt:
+
+```js
+const numbers = [...];
+const numberToCheck = 3333;
+const numberIsIncluded = numbers.includes(numberToCheck);
+
+numberOutput.textContent = numberIsIncluded ? `Yes, number ${numberToCheck} is included.` : `No, number ${numberToCheck} is not included.`;
+```
 
 ---
 
@@ -54,6 +69,17 @@ colors.findIndex((color) => color.startsWith("b")); // -1
 
 ### notes
 
+```js
+const ... = array.find((parameter) => parameter.objectItemKey === value)
+
+const objectToFind = simpsons.find((simpson) => simpson.age === 43)
+```
+
+- find sucht nach einem objekt, also "parameter" steht hier für die objekte die durchsucht werden
+- "objectItemKey" ist in den objekten als schon key vergeben
+- wenn find nichts findet, "undefined"
+- implicit return wenn keine curly brackets (man braucht kein return), mit curly brackets hat es diese funktion nicht mehr, dann `return` nutzen
+
 ---
 
 ## `sort` and `reverse`
@@ -80,6 +106,15 @@ The sorted order is based on the return value of `a - b` / `b - a` :
 
 > 💡 `sort()` converts the elements into strings, then compares their sequences of UTF-16 Code units
 > values. This is why `array.sort()` without a callback is mostly useless.
+
+#### notes
+
+- normalerweise würde es nur auf die vorderste ziffer schauen und danach numerisch sortieren
+- modify the array itself (in neuer variable speichern)
+- a first value, being compared with second value (b). danach rutscht die untersuchung ein item weiter und der zweite wert (dann a) wird mit dem dritten (dann b) verglichen usw.
+- oben quasi soll es nach größe geordnet werden, wenn a-b positiv ist, ist die reihenfolge der beiden zahlen falsch, also sie müssen vertascht werden (denn a ist größer als b) und wenn es negativ ist, ist b schon größer als a und die reihenfolge kann beibehalten werden
+
+- (sorting strings):
 
 ### Sorting Strings
 
@@ -126,6 +161,10 @@ const numbers = [4, 42, 23, 1];
 const reversedNumbers = numbers.reverse(); // [1, 23, 42, 4]
 ```
 
+#### notes
+
+- modifies the array on which we work (variable erstellen(?))
+
 ### `slice`
 
 It's important to note that some array methods, as `sort()`, do not create a new array, but mutate
@@ -164,6 +203,20 @@ console.log(sortedNumbers); // [1, 4, 23, 42]
 console.log(numbers); // [4, 42, 23, 1]
 ```
 
+#### notes
+
+- we want to create a new array that only includes some of the elements of the first one
+- `slice`doesnt modify the originl array (nicht wie find etc.)
+- "gib mir den ganzen array ab position 2" z.b., oder "gib mir position 2 und 4 aus dem array", wir sagen ihm aber, was er herausschneiden soll
+
+(positionZ, positionC)
+positionZ: bis zu dieser position einschließlich
+positionC: ab nach dieser position
+
+- arrays and objects are complex values, wenn man etwas an einem ändert, ändert es sich auch an der "Kopie", es ist keine kopie, sondern shortcut
+- wenn wir eine richtige copy machen wollen, wo es das wo es herkommt nicht affected, benutzt man slice
+- arrays and objects are always references to a place in memory
+
 ---
 
 ## `some` and `every`
@@ -184,6 +237,20 @@ const colors = ["hotpink", "aquamarine", "granite"];
 
 colors.every((color) => color.length > 5); // true
 colors.every((color) => color.length < 3); // false
+```
+
+#### notes
+
+- `some`: check that we have at least one item contains this value
+- `every`: check if all items contain this value
+- mit nicht anonymer funktion die vorher kreirt wurde:
+
+```js
+let a11l = [1, 1, 1, 1, 1, 1, 1, 1];
+function is1(value) {
+  return value === 1;
+}
+all1.every(is1);
 ```
 
 ---
@@ -228,6 +295,15 @@ console.log(sum); // 70
 >
 > console.log(myObject); // {hi: 1, hey: 4, ho: 2}
 > ```
+
+### notes
+
+```js
+let arr1 = [2, 3, 4];
+arr1.reduce((a, b) => a * b);
+```
+
+Ergebnis ist 2 x 3 = 6, 6 ist das zweite item des arrays, wird dann zu a und 4 wird zu b, dann: 6 x 4 = 24, d.h. das vierte (????)
 
 ---
 

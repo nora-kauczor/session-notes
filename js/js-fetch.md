@@ -2,6 +2,49 @@
 
 # JS Fetch
 
+### notes
+
+https://github.com/neuefische-web-demos/hh-web-24-2-js-fetch/blob/main/js/index.js
+
+**how can we get data from online resources?** z.b. unsere eigene, oder eine andere, offene
+
+- API ebene zwischen der online-datenbank und unserem client
+
+  - endpoints für jeweils eine bestimmte funktionalität, API ist die sammlung aus diesen endpunkten/funktionalitäten
+  - endpunkte sind urls
+  - **REST API**: online-datenbank, die eine API davor hat (also beides zusammen wird als rest api bezeichnet)
+
+- `promise`: platzhalter für zukünftige daten
+  - zustände: pending / resolved / rejected
+- `await` unterbricht die funktion solange bis (z.b.) fetch durchgelaufen ist
+  - wenn wir await nutzen, muss die funktion asynchron sein
+  - dann wird kein `promise` angezeigt, sondern die daten
+- `variable.json();` beispiel für datei, die wir zurückbekommen wollen (meistens .json-dateien), "nimm dir die daten, die zurückgekommen sind und wandle sie in ein js-object um"
+
+```js
+async function getJoke() {
+  jokeSection.innerHTML = "";
+
+  // fetch returns a Promise
+  const response = await fetch(
+    `https://example-apis.vercel.app/api/bad-jokes/`
+  );
+
+  // response returns a Promise too!
+  const data = await response.json();
+
+  console.log(data);
+  data.forEach((item) => {
+    renderJoke(item.joke);
+  });
+}
+
+getJoke();
+```
+
+- während des fetchens sollte z.b. so etwas wie ein button immer noch funktionieren. Und das geht dann aber weil man durch das await ja aus der funktion rausgeht? (wenn eventlistener des buttons ist außerhalb der funktion )
+- wenn man async vor die function schreibt, ist sie im hintergrund keine funktion mehr sondern ein generator
+
 ## Learning Objectives
 
 - [ ] Understanding how asynchronous code works

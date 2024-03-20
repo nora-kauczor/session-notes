@@ -17,8 +17,9 @@ https://github.com/neuefische-web-demos/hh-web-24-2-js-fetch/blob/main/js/index.
 - `promise`: platzhalter für zukünftige daten
   - zustände: pending / resolved / rejected
 - `await` unterbricht die funktion solange bis (z.b.) fetch durchgelaufen ist
+
   - wenn wir await nutzen, muss die funktion asynchron sein
-  - dann wird kein `promise` angezeigt, sondern die daten
+
 - `variable.json();` beispiel für datei, die wir zurückbekommen wollen (meistens .json-dateien), "nimm dir die daten, die zurückgekommen sind und wandle sie in ein js-object um"
 
 ```js

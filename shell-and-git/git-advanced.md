@@ -1,4 +1,49 @@
+20.03.24 pm
+
 # Git Advanced
+
+https://github.com/neuefische/hh-web-24-2/blob/main/sessions/git-advanced/git-advanced.md
+
+## notes
+
+szenario
+
+- branch1 and branch2 werden unabhängig voneinander erstellt und es wird daran gebastelt, inhaltlich überschneidungen (konflikt)
+- branch2 merged into main
+- branch1 kann nicht in den nun veränderten main gemerged werden
+
+to do (durch denjenigen, der branch1 gebaut hat):<br>
+unterschiedliche möglichkeiten<br>
+
+1. using merge on the command line
+
+- pull main???
+- switch to branch
+- merge main into (non-merged) branch1: `git merge main`
+- `code .` und dort konflikte lösen
+- as usual: add, commit, push and merge branch1 into main, delete branch remotely, pull main, delete branch locally
+
+2. using Resolve Conflicts on GitHub
+
+- github button "resolve conflicts"
+- anleitung folgen..
+- as usual: mergen, branch löschen, pullen (gff. remote branch löschen)
+
+3. rebase (s. auch unten) ????? tendenziell ignorieren..
+
+- ggf. pull main
+- switch to branch
+- `git rebase main`
+- `code .` und konflikt beheben **Notice that when rebasing the logic of incoming and current change is reversed.**
+- `git add .`
+- `git rebase --continue` Git opens an editor with the commit message for the rebased commit. Keep the message as-is.
+- To save and close the editor type :wq and press Enter.
+- `code .` und konflikt beheben
+- `git add .`
+- `git rebase --continue` Git opens an editor with the commit message for the rebased commit. Keep the message as-is.
+- as usual: add, commit, push and merge branch1 into main, delete branch remotely, pull main, delete branch locally
+
+`git diff` show me differences between branch and main (in case of conflict) (befehl nicht unbed. relevant)
 
 ## Learning Objectives
 

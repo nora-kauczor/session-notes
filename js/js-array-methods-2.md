@@ -28,7 +28,7 @@ colors.includes("aquamarine"); // true
 colors.includes("nemo"); // false
 ```
 
-### notes
+### notes - includes
 
 - begin to search from a certain point in array (wenn array sehr lang ist und der code nicht so lange laufen soll und man will weiter hinten suchen)
   `array.includes(value, index-to-start-at)`
@@ -67,7 +67,7 @@ colors.findIndex((color) => color.startsWith("g")); // 2
 colors.findIndex((color) => color.startsWith("b")); // -1
 ```
 
-### notes
+### notes - find/findIndex
 
 ```js
 const ... = array.find((parameter) => parameter.objectItemKey === value)
@@ -107,14 +107,18 @@ The sorted order is based on the return value of `a - b` / `b - a` :
 > 💡 `sort()` converts the elements into strings, then compares their sequences of UTF-16 Code units
 > values. This is why `array.sort()` without a callback is mostly useless.
 
-#### notes
+#### notes - sorting (numbers)
 
 - normalerweise würde es nur auf die vorderste ziffer schauen und danach numerisch sortieren
 - modify the array itself (in neuer variable speichern)
 - a first value, being compared with second value (b). danach rutscht die untersuchung ein item weiter und der zweite wert (dann a) wird mit dem dritten (dann b) verglichen usw.
 - oben quasi soll es nach größe geordnet werden, wenn a-b positiv ist, ist die reihenfolge der beiden zahlen falsch, also sie müssen vertascht werden (denn a ist größer als b) und wenn es negativ ist, ist b schon größer als a und die reihenfolge kann beibehalten werden
+- Einen Array (`employees`) aus Objekten nach bestimmtem Item der Objekte (hier: `age`) ordnen:
 
-- (sorting strings):
+```js
+// QUESTION 10: We need a new employees array now sorted by age ascending (1 -> 100)
+const employeesSortedByAge = employees.sort((a, b) => a.age - b.age);
+```
 
 ### Sorting Strings
 
@@ -165,7 +169,7 @@ const reversedNumbers = numbers.reverse(); // [1, 23, 42, 4]
 
 - modifies the array on which we work (variable erstellen(?))
 
-### `slice`
+## `slice`
 
 It's important to note that some array methods, as `sort()`, do not create a new array, but mutate
 the original one.
@@ -203,7 +207,7 @@ console.log(sortedNumbers); // [1, 4, 23, 42]
 console.log(numbers); // [4, 42, 23, 1]
 ```
 
-#### notes
+#### notes - slice
 
 - we want to create a new array that only includes some of the elements of the first one
 - `slice`doesnt modify the originl array (nicht wie find etc.)
@@ -216,6 +220,14 @@ positionC: ab nach dieser position
 - arrays and objects are complex values, wenn man etwas an einem ändert, ändert es sich auch an der "Kopie", es ist keine kopie, sondern shortcut
 - wenn wir eine richtige copy machen wollen, wo es das wo es herkommt nicht affected, benutzt man slice
 - arrays and objects are always references to a place in memory
+  von mdn:
+
+```js
+const animals = ["ant", "bison", "camel", "duck", "elephant"];
+
+console.log(animals.slice(2));
+// Expected output: Array ["camel", "duck", "elephant"]
+```
 
 ---
 
@@ -306,6 +318,32 @@ arr1.reduce((a, b) => a * b);
 Ergebnis ist 2 x 3 = 6, 6 ist das zweite item des arrays, wird dann zu a und 4 wird zu b, dann: 6 x 4 = 24, d.h. das vierte (????)
 
 ---
+
+## Beispiele
+
+aus "animal objects"-challenge
+
+```js
+const allAnimalsInEuropeWeighLessThanOnehundred = animals
+  .filter((animal) => animal.continents.includes("Europe"))
+  .every((animal) => animal.weight < 100);
+```
+
+aus "animal strings"-challenge
+
+```js
+// Hint: There are several ways to go here. Let's focus on two options:
+// Option 1: Concatenate all characters with `reduce()` and check for the `length` property of the result.
+// Option 2: Use `map()` to create an array with the length values of all strings,
+// 				then sum them up with `reduce()` (keyword: method chaining)
+
+const sumOfAllAnimalCharacters = animalStrings.reduce((a, b) => a + b).length;
+const sumOfAllAnimalCharacters = animalStrings
+  .map((animal) => animal.length)
+  .reduce((a, b) => a + b);
+
+console.log(sumOfAllAnimalCharacters);
+```
 
 ## Resources
 

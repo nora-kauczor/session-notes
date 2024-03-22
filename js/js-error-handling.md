@@ -56,6 +56,8 @@ try {
 
 - Should we wrap any function call in a try...catch? No, you do it just if you know that the function may throw an error. How do you know it? Well, if you have written the function yourself you have first hand knowledge; if you are using some external function, you have to read about it.
 
+- **wenn man etwas in try scope erstellt (also innerhalb try{}), ist es nicht außerhalb zugänglich**
+
 ##
 
 checking properties of the response object
@@ -67,6 +69,8 @@ error-object has a property "message"
 ## challenge 2
 
 Es gibt vier Buttons im HTML. Bei einem funktioniert URL nicht. Bei dem anderen wird html (statt json) zurückgegeben. Zwei unterschiedliche Arten von "Error" sozusagen..
+
+### aleks:
 
 ```js
 console.clear();
@@ -90,7 +94,7 @@ async function getUser(url) {
   if (!response.ok) {
     // we check if response is NOT ok, status >= 400 is not ok
     console.log("Network error");
-    return null; // there is nothing to return
+    return null; // there is nothing to return (function stopped)
     // but our code expects to receive something so we return null
   }
 

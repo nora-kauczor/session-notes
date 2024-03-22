@@ -1,56 +1,98 @@
-
-
-
 unvollst.
-##
-event.target.dataset.url is a JavaScript expression used within an event listener to retrieve the value of the data-url attribute of the element that triggered the event.
 
-###
-link js-file in html script (without modules), bsp-link
-<br>`<script src="./index.js" defer></script>`<br>
+- `parseInt(...)` to convert string to an integer
+- turn integer into string:
 
-### queryselector
+```js
+let newVariable = variable.toString();
+oder;
+let newVariable = String(variable);
+```
+
+#
+
+- `event`: WAS (welche Daten) bekomme ich, wenn die Aktivität (z.B. click) passiert?
+
+  - ≠ Aktivität (click, ..), was man tatsächlich als "Event" bezeichnen würde
+  - currywurst-feld, aber wird meistens event genannt
+
+- `event.target`: triggerndes element
+
+  - WOHER kommen diese Daten? What TRIGGERED the data (data called "event")
+  - (`target` points back to where something originated from)
+
+- `event.target.dataset.url` : Was ist VALUE des data-url-properties von dem TRIGGERNDEM ELEMENT
+  - the value of the data-url attribute of the element that triggered the event
+  - (within event listener)
+  - setzt voraus, dass es das html-propery "data-url" gib
+
+#
+
+- link js-file in html script (without modules): `<script src="....." defer></script>`
+
+- link css-file in html script: `<link rel="stylesheet" href="....." />`
+
+# queryselector
 
 - wenn es nur ein element dieser art gibt, kann man es auch mit "element" holen
 - wenn id oder class mit . oder # respectively
 - normalerweise mit '[data-js="data-js-value"]'
 
-### html-elemente manipulieren
+# html-elemente manipulieren
 
 nachdem erstellt oder mit query geholt<br>
-`element.textContent` = "...."<br>
-`element.classList.add("class-name")` / `.remove`/ `.toggle`<br>
-`element.setAttribute("attribute-name", "attribute-value")`<br>
+`element.textContent = "....";`<br>
+`element.classList.add("class-name");` / `.remove`/ `.toggle`<br>
+`element.setAttribute("attribute-name", "attribute-value");`<br>
+`element.innerHTML = (...);`-> nicht für sensible Daten. In den Kalmmern wird direkt HTML-Syntax geschrieben
 
-### style
+# style
 
 nachdem erstellt oder mit query geholt<br>
 `element.style.property = "property-value";`
 
-### random
+# arrays (einfach)
 
-logge mir alle h2-elemente aus
-`console.log(document.querySelector("h2"))`
+- `array.lenght`
+- erstes el entf: `array.shift()`
+- letztes el entf: `array.pop()`
+- hinzufügen am ende: `array.push(element)`
+- hinzufügen am anfang: `array.unshift(element)`
 
-### array properties
+# objects (einfach)
 
-`.array.lenght`
+- property löschen: `delete object.property;`
+- add new property: `object.property = value;`
 
-### array methods
+# array methods
 
-| Tables          |                            Are                            |                                       result |
+-> arrays and objects are complex values, wenn man etwas an einem ändert, ändert es sich auch an der "Kopie", es ist keine kopie, sondern shortcut
+| Tables | Are | result |
 | --------------- | :-------------------------------------------------------: | -------------------------------------------: |
-| forEach         |                                                           |                                              |
-| map             |                                                           |                                        array |
-| filter          | return boolean to say which ones are gonna be kept (true) |                                        array |
-| includes        |        `array.includes(value, index-to-start-at)`         |                                      boolean |
-| find, findIndex |                                                           | element of array / index of element of array |
-| sort, reverse   |                                                           |                                        array |
-| slice           |            kopiert, erstellt tats. neuen Array            |                                              |
-| some, every     |                                                           |                                      boolean |
-| reduce          |                                                           |                                        value |
+| forEach | | es wird das ausgeführt, was drinsteht|
+| map | | array |
+| filter | return boolean to say which ones are gonna be kept (true) | array |
+| includes | `array.includes(value, index-to-start-at)` | boolean |
+| find, findIndex | | element of array / index of element of array |
+| sort, reverse | | array |
+| slice | kopiert, erstellt tats. neuen Array | |
+| some, every | | boolean |
+| reduce | | value |
+| join |
 
-arrays and objects are complex values, wenn man etwas an einem ändert, ändert es sich auch an der "Kopie", es ist keine kopie, sondern shortcut
+### split(): split a string into an array of substrings based on a specified separator
+
+- If no separator is provided, the entire string is returned as the only element in the array.
+- The separator parameter can be a string or a regular expression.
+- `numberString.split("")` separates each character (digit) in the string into individual elements of the resulting array
+
+### join(): join all elements of an array into a single string
+
+```js
+array.join("");
+```
+
+<br>
 alphabetisch sortieren (ggf vorher upper/lowercasen):
 
 ```js

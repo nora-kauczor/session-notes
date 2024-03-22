@@ -29,7 +29,7 @@ let newVariable = String(variable);
 #
 
 - link js-file in html script (without modules): `<script src="....." defer></script>`
-
+- link js-file in html script with modules: `<script src="....." type="module"></script>`
 - link css-file in html script: `<link rel="stylesheet" href="....." />`
 
 # queryselector
@@ -44,7 +44,7 @@ nachdem erstellt oder mit query geholt<br>
 `element.textContent = "....";`<br>
 `element.classList.add("class-name");` / `.remove`/ `.toggle`<br>
 `element.setAttribute("attribute-name", "attribute-value");`<br>
-`element.innerHTML = (...);`-> nicht für sensible Daten. In den Kalmmern wird direkt HTML-Syntax geschrieben
+`element.innerHTML = `-> nicht für sensible Daten. Dahinter wird innerhalb von back ticks HTML-Syntax geschrieben
 
 # style
 

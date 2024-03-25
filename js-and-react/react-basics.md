@@ -36,7 +36,7 @@ Scaffolding - Gerüstbau
 
 ### in App.js:
 
-```js
+```jsx
 export default function App() {
   return (
     <div>
@@ -64,7 +64,7 @@ function Button() {
 
 ### in index.js:
 
-```js
+```jsx
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
@@ -84,12 +84,7 @@ root.render(
 - createRoot creates an object, which is the virtual DOM
 - render method displays it to the browser
 - `<App /> `is a convention, but you can call it what you like
-- but you have a main component (...?)
-- react uses a virtual DOM
-- react holds all the change in a variable and when ... it updates the website only in the places, where the change is
-- roots(???) has to have an initial component.. wrap react-elements inside ...
-
-- "bootstrap code"
+- react updates the website only in the places, where the change is
 
 ## What is React and why do we use it?
 

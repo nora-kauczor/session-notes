@@ -1,10 +1,11 @@
 # branches and pull requests
 
-## repo erstellen und mit github verknüpfen/hochladen
+## repo erstellen und mit github verknüpfen/hochladen (unvollst)
 
 - `mkdir new-project`
 - `cd new-project`
 - code ., Datei erstellen und etwas darin schreiben
+- irgendwann: `git init`
 - add
 - commit
 - repo erstellen (remotely)

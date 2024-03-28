@@ -1,3 +1,5 @@
+26.03.24 pm
+
 # React State 1
 
 ## Learning Objectives
@@ -8,6 +10,46 @@
 - [ ] Understanding the React Lifecycle
 
 ---
+
+## notes
+
+1. Wert updaten
+2. (re)rendern
+
+```js
+const [stateVariable, setter] = useState(Ausgangswert der stateVariable);
+```
+
+```js
+const [count, setCount] = useState(0);
+```
+
+- `count` getter, state variable: holt den Wert; variable, in der der wert gespeichert ist
+- `setCount` setter: setzt den Wert der Variable (ändert ihn)
+  - `setCount(..)`
+- `useState(n)` triggered re-render
+  - bezieht sich immer auf die Funktion, in der es verwendet wird. state gehört immer zu --einer-- komponente
+  - beim destrukturieren des arrays wird ein ausgangswert für den getter gesetzt (in Klammern hinter useState)
+
+###
+
+#### Art von If-Statement:
+
+```js
+{
+  Bedingung && Folge;
+}
+```
+
+####
+
+```js
+onClick = { handleClick };
+```
+
+- handleClick (Currywurst-Feld) ist
+- function reference, verweis auf den handleClick
+- handleClick ist hier der input der funktion "onCLick", aber auch das, was ausgeführt wird.......
 
 ## What is state?
 

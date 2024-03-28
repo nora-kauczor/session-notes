@@ -1,4 +1,8 @@
+25.03.24 pm
+
 # React Props
+
+https://github.com/neuefische-web-demos/hh-web-24-2-react-props/blob/main/src/App.js
 
 ## Learning Objectives
 
@@ -37,7 +41,26 @@ Props can be of any type (string, number, array, object, function, ...).
 
 You should treat the props object as immutable and read-only.
 
----
+### notes
+
+- wir übergeben der komponente eine information per prop.
+- wenn es in der function drin wäre: "hard gecoded"
+
+`{prop}`
+
+- aria-label: `<span ...... aria-label={label}>....`, label ist hier unser prop für aria-labels
+- string-interpolation: wenn man mit ${} zwischen backticks variablen reinschreibt
+- props, in denen text gespeichert ist, brauchen keine string-interpolation. man kann sie einfach so reinschreiben (wie im bsp.)
+- und bei den werten also den strings an sich braucht man ganz normal anführungszeichen aber keine curly braces (wie für andere values)
+- jsx ist das, was nach dem return kommt
+- es wirdjeweils ein <>object</ mark> erstellt (bzw. pro komponente = d.h. pro wie viele male man das auspärgt oben in dem aufruf)
+- und das was hier gemacht wird, es <>wird schon vorher direkt in den parameter-klammern destrukturiert</ mark>
+- curly braces um parameter herum -`StrictMode` hilfestellung zur react-entwicklung, dazu gehört u.a. das jede komponente zweifach gerenderred wird
+- statt eventlistener (vanilla js), `onClick`-prop. Sollte auf buttons getan werden normalweise (a11y)
+- komponenten durchreichen (nicht aufrufen) in react, wenn man in dem bereich....
+- konvention bei nf: `on` in name von prop und die function selbst mit `handle`
+- booleans mit `is`
+- wenn für ein pets false ist, kann boolean einfach weggelassen werden (denn das ist undefined und unedfined ist ein falsy) und wenn es true ist, kann man einfach nur den namen des boolean schreiben (ohne "={true}")
 
 ## Passing Props to a Component
 
@@ -119,3 +142,19 @@ function UserCard({ name, isFavorite }) {
 
 - [Passing props to a Component in the React Docs](https://react.dev/learn/passing-props-to-a-component)
 - [Conditional Rendering in the React Docs](https://react.dev/learn/conditional-rendering)
+
+## CSS
+
+`<html-element style={{css-property: value}}>`
+
+Beispiel:
+
+```js
+function Button({ color, isDisabled, text }) {
+  return (
+    <button style={{ color: color }} disabled={isDisabled}>
+      {text}
+    </button>
+  );
+}
+```

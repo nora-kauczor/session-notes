@@ -1,12 +1,12 @@
 25.03.24 am
 
-|       |           |        |
-| ----- | --------- | ------ |
-| for   | htmlFor   | (form) |
-| class | className |        |
-|       |           |        |
-|       |           |        |
-|       |           |        |
+|            |           |        |
+| ---------- | --------- | ------ |
+| for        | htmlFor   | (form) |
+| class      | className |        |
+| `onClick`  |           |        |
+| `onSubmit` |           |        |
+|            |           |        |
 
 - keine live preview, immer im browser
 - dafür z.b. local host adresse aus console von vs code kopieren (öffnet sonst bei npm run start auch automatisch)
@@ -32,7 +32,7 @@ Scaffolding - Gerüstbau
 
 - split into tiniest parts that do a single task (components)
 - alles in "root"
-- we can return as many elements as we want, but it has to have a parent element (?), szenario wo z.b. die mehreren buttons nah beieinander sind und wrap sie dann in div<br>
+- we can return as many elements as we want, but it has to have a parent element (sobald man es mehr als einmal aufruft), szenario wo z.b. die mehreren buttons nah beieinander sind und wrap sie dann in div<br>
 
 ### in App.js:
 
